@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222237;
+}
+
+.menu {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .toggle {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    color: #222;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.menu .toggle.active {
+    transform: rotate(315deg);
+    box-shadow: 0 0 0 68px #bdbaba;
+    background: #fff;
+}
+
+.menu li {
+    position: absolute;
+    left: 110px;
+    list-style: none;
+    transform: rotate(calc(360deg / 6 * var(--i))) translateX(40px);
+    transform-origin: 140px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.menu.active li {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    font-size: 1.75em;
+    color: #222327;
+    transform: rotate(calc(360deg / -6 * var(--i)));
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    transform: scale(1.2);
+    color: #fff;
+    background: #7F1DFE;
+
+}
+
+.menu.active li.active {
+    transform: rotate(calc(360deg / 6 * var(--i))) translateX(40px);
+}

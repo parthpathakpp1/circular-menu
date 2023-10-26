@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul class="menu">
+        <div class="toggle">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <li style="--i:0" class="active"><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li style="--i:1"><a href="#"><ion-icon name="videocam-outline"></ion-icon></a></li>
+        <li style="--i:2"><a href="#"><ion-icon name="camera-reverse-outline"></ion-icon></a></li>
+        <li style="--i:3"><a href="#"><ion-icon name="stats-chart-outline"></ion-icon></a></li>
+        <li style="--i:4"><a href="#"><ion-icon name="aperture-outline"></ion-icon></a></li>
+        <li style="--i:5"><a href="#"><ion-icon name="images-outline"></ion-icon></a></li>
+        
+    </ul>
+
+    <script>
+       let menuToggle = document.querySelector('.toggle');
+       let menu = document.querySelector('.menu');
+       menuToggle.onclick = function(){
+        menu.classList.toggle('active')
+        menuToggle.classList.toggle('active')
+       }
+
+       const list = document.querySelector('li');
+       function activeLink(){
+        list.forEach((item) =>  item.classList.remove('active'));
+        this.classList.add('active')
+       }
+       list.forEach((item) => item.addEventListener('click',activeLink));
+
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
